@@ -1,4 +1,4 @@
-$("#github").on("submit", function() {
+$(".btn-default").on("click", function() {
   var user = $("input[id=user]").val();
   
   emptyCurrentList();
