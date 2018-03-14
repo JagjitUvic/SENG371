@@ -14,7 +14,7 @@
 	window.onload = function() {
 		for (var prop in beatles) {
 			var beatle = document.createElement("li");
-			var textnode = document.createTextNode(prop + " : " + beatles[prop] + (beatles[prop] == 'Guitar2' ? ' Fave!' : ''));
+			var textnode = document.createTextNode(prop + " : " + beatles[prop] + (beatles[prop] == 'George' ? ' - Fave!' : ''));
 			beatle.appendChild(textnode);
 			document.getElementById("beatles").appendChild(beatle);
 		}
