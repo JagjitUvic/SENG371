@@ -1,6 +1,5 @@
 $("#github").on("submit", function() {
   var user = $("#user");
-  // console.log(typeof(user));
   emptyCurrentList();
 
   // Using the github API https://developer.github.com/v3/repos/#list-user-repositories
@@ -17,9 +16,6 @@ $("#github").on("submit", function() {
 });
 
 function iterateThroughData(repos) {
-  // for(i=0; i<repos.length; i++){
-  //   insertHTML(repos[i]);
-  // }
   _.forEachRight(repos, function(repo) {
     insertHTML(repo);
   });
