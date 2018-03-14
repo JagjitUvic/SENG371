@@ -1,6 +1,5 @@
 $("#github").on("submit", function() {
-  var user = $("#user");
-
+  var user = $("#user").val();
   emptyCurrentList();
 
   // Using the github API https://developer.github.com/v3/repos/#list-user-repositories
@@ -13,6 +12,8 @@ $("#github").on("submit", function() {
       insertError();
     }
   });
+
+  return false;
 });
 
 function iterateThroughData(repos) {
@@ -22,7 +23,7 @@ function iterateThroughData(repos) {
 }
 
 function insertHTML(repo) {
-  $("#repositories").append("<li>" + repo.title + "</li>");
+  $("#repositories").append("<li>" + repo.name + "</li>");
 }
 
 function emptyCurrentList() {
