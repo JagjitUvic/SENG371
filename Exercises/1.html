@@ -1,40 +1,45 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>JavaScript Loops</title>
-<script>
-	var index;
-	var beatles = [];
-	beatles["Guitar1"] = "John";
-	beatles["Bass"] = "Paul";
-	beatles["Guitar2"] = "George";
-	beatles["Drums"] = "Ringo";
+	<meta charset="UTF-8">
+	<title>JavaScript Loops</title>
+	<script>
+		var index;
+		var beatles = [];
+		beatles["Guitar1"] = "John";
+		beatles["Bass"] = "Paul";
+		beatles["Guitar2"] = "George";
+		beatles["Drums"] = "Ringo";
 
-	window.onload = function() {
-		for (var prop in beatles) {
-			var beatle = document.createElement("li");
-			beatle.setAttribute("id", prop);
-			var textnode = document.createTextNode(prop + " : " + beatles[prop]);         // Create a text node
-			beatle.appendChild(textnode);                              // Append the text to <li>
-			document.getElementById("beatles").appendChild(beatle);
+		window.onload = function () {
+			for (var prop in beatles) {
+				var beatle = document.createElement("li");
+				beatle.setAttribute("id", prop);
+				var textnode = document.createTextNode(prop + " : " + beatles[prop]);         // Create a text node
+				beatle.appendChild(textnode);                              // Append the text to <li>
+				document.getElementById("beatles").appendChild(beatle);
+			}
+
+			document.getElementById("redgeorge").addEventListener("click", function () {
+				document.getElementById("Guitar2").style.color = '#FF0000';
+				return false;
+			});
 		}
-
-		document.getElementById("redgeorge").addEventListener("click", function() {
-			document.getElementById("Guitar1").style.color='#FF0000';
-	    	return false;
-		});
-	}
-</script>
+	</script>
 </head>
+
 <body>
-<h1>JavaScript Debugging (help setting George to red)</h1>
-<ol id="beatles">
-</ol>
-<div class="buttons">
-	<ul>
-		<li><a href="#" id="redgeorge">Set George Red</a></li>
-	</ul>
-</div>
+	<h1>JavaScript Debugging (help setting George to red)</h1>
+	<ol id="beatles">
+	</ol>
+	<div class="buttons">
+		<ul>
+			<li>
+				<a href="#" id="redgeorge">Set George Red</a>
+			</li>
+		</ul>
+	</div>
 </body>
+
 </html>
