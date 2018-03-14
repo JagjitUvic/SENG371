@@ -1,5 +1,8 @@
 $("#github").on("submit", function() {
-  var user = $("#user");
+  var user = document.getElementById("user").value;
+  //var user = "JagjitUvic";
+
+
 
   emptyCurrentList();
 
@@ -22,7 +25,7 @@ function iterateThroughData(repos) {
 }
 
 function insertHTML(repo) {
-  $("#repositories").append("<li>" + repo.title + "</li>");
+  $("#repositories").append("<li>" + repo.name + "</li>");
 }
 
 function emptyCurrentList() {
