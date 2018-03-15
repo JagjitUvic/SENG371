@@ -1,5 +1,6 @@
 $("#github").on("submit", function() {
-  var user = $("#user");
+  var user = $("#user").val();
+	 		console.log(user);
 
   emptyCurrentList();
 
@@ -7,12 +8,14 @@ $("#github").on("submit", function() {
   $.ajax({
     url: "https://api.github.com/users/" + user + "/repos?client_id=1699520b1a1353e2d28f&client_secret=19f0b5d59aa52197d1c3e59ce8d85233738cda20",
     success: function(repos) {
+	console.log(repos);
       iterateThroughData(repos);
     },
     error: function(data) {
       insertError();
     }
   });
+return false;
 });
 
 function iterateThroughData(repos) {
@@ -22,7 +25,7 @@ function iterateThroughData(repos) {
 }
 
 function insertHTML(repo) {
-  $("#repositories").append("<li>" + repo.title + "</li>");
+  $("#repositories").append("<li>" + repo.name + "</li>");
 }
 
 function emptyCurrentList() {
