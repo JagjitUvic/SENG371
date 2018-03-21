@@ -1,6 +1,5 @@
-$("#github").on("submit", function() {
-  var user = $("#user");
-
+$("#button").on("click", function() {
+  var user = document.getElementById("user").value;
   emptyCurrentList();
 
   // Using the github API https://developer.github.com/v3/repos/#list-user-repositories
@@ -22,7 +21,7 @@ function iterateThroughData(repos) {
 }
 
 function insertHTML(repo) {
-  $("#repositories").append("<li>" + repo.title + "</li>");
+  $("#repositories").append("<li>" + repo.name + "</li>");
 }
 
 function emptyCurrentList() {
